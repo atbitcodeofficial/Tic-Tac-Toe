@@ -1,4 +1,4 @@
- let box = document.querySelectorAll(".box");
+  let box = document.querySelectorAll(".box");
         let txt1 = document.getElementById("txt");
         let screen = document.querySelector(".screen");
         let subTxt = document.getElementById("subTxt");
