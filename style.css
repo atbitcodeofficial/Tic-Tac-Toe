@@ -1,10 +1,12 @@
         @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Gochi+Hand&display=swap');
-* {
+
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-             font-family: 'Cedarville Cursive', cursive;
-            font-family: 'Gochi Hand', cursive;  
+            /* font-family: cursive; */
+            font-family: 'Cedarville Cursive', cursive;
+            font-family: 'Gochi Hand', cursive;
         }
 
         body {
@@ -39,6 +41,8 @@
             width: 100%;
             display: flex;
             gap: 10px;
+            position: relative;
+            z-index: 10;
         }
 
         .mainBody .row .box {
@@ -61,12 +65,15 @@
             position: absolute;
             top: 50px;
             transform: translateY(-150%);
-            animation: startAnimation2 0.5s linear forwards;
+            animation: startAnimation2 1s linear forwards;
+            height: 100%;
+            width: 100%;
         }
 
         .heddingDiv h1 {
             font-size: 50px;
             color: white;
+            text-align: center;
         }
 
         .disabled {
@@ -81,15 +88,61 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
         }
 
         .screen .txtDiv h1 {
             font-size: 50px;
             color: #512da8;
+            text-align: center;
         }
 
         .screenShow {
             transform: translateY(-100%);
+        }
+
+        .winBox {
+            background-color: lightgreen;
+        }
+
+        .main .scoreBoard {
+            display: flex;
+            color: white;
+            gap: 50px;
+            position: absolute;
+            bottom: 10px;
+            left: 30px;
+            transform: translateX(-150%);
+            animation: startAnimation3 0.3s linear forwards;
+        }
+
+        .screen .scoreBoard {
+            position: absolute;
+            top: 150px;
+            display: flex;
+            gap: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #512da8;
+            font-size: 30px;
+        }
+
+        .lead {
+            text-align: center;
+        }
+
+        .main .lead {
+            color: white;
+        }
+
+        .screen .lead {
+            color: #512da8;
+        }
+
+        .screen .scoreBoard h1 {
+            text-align: center;
         }
 
         @keyframes startAnimation1 {
@@ -112,8 +165,27 @@
             }
         }
 
+        @keyframes startAnimation3 {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
         @media screen and (max-height: 600px) {
             .heddingDiv {
                 top: 0;
+            }
+
+            .screen .scoreBoard {
+                top: 100px;
+            }
+            .main .lead {
+                position: absolute;
+                bottom: 0;
+                right: 0;
             }
         }
